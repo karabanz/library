@@ -6,7 +6,7 @@ class LoginFormCest
     {
         $I->amOnRoute('site/login');
     }
-
+    /*
     public function openLoginPage(\FunctionalTester $I)
     {
         $I->see('Login', 'h1');
@@ -55,5 +55,5 @@ class LoginFormCest
         ]);
         $I->see('Logout (admin)');
         $I->dontSeeElement('form#login-form');              
-    }
+    } */
 }

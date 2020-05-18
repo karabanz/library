@@ -1,17 +1,17 @@
 <?php
 
-class ContactFormCest 
+class MyCest 
 {
     public function _before(\FunctionalTester $I)
     {
-        $I->amOnPage(['site/contact']);
-    }
-    /*
-    public function openContactPage(\FunctionalTester $I)
-    {
-        $I->see('Contact', 'h1');        
+        $I->amOnPage(['site/index']);
     }
 
+    public function findLinkToUsersPage(\FunctionalTester $I)
+    {
+        $I->see('Пользователи', 'a');        
+    }
+    /*
     public function submitEmptyForm(\FunctionalTester $I)
     {
         $I->submitForm('#contact-form', []);
@@ -53,5 +53,5 @@ class ContactFormCest
         $I->seeEmailIsSent();
         $I->dontSeeElement('#contact-form');
         $I->see('Thank you for contacting us. We will respond to you as soon as possible.');        
-    } */
+    }*/
 }
