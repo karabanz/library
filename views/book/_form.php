@@ -2,7 +2,10 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
 
+$genries = ArrayHelper::map($genries, 'id', 'name');
+$publishers = ArrayHelper::map($publishers, 'id', 'name'); 
 /* @var $this yii\web\View */
 /* @var $model app\models\Book */
 /* @var $form yii\widgets\ActiveForm */
@@ -14,9 +17,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'idGenre')->textInput() ?>
+    <?= $form->field($model, 'idGenre')->dropDownList($genries) ?>
 
-    <?= $form->field($model, 'idPublisher')->textInput() ?>
+    <?= $form->field($model, 'idPublisher')->dropDownList($publishers) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
