@@ -53,4 +53,8 @@ class Genre extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Book::className(), ['idGenre' => 'id']);
     }
+    public function findBooks(){
+        $res = Book::find()->where(['idGenre' => $this->id])->all();
+        return $res;
+    }
 }
