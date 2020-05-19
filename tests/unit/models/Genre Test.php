@@ -13,5 +13,9 @@ class GenreTest extends \Codeception\Test\Unit
         // Убедиться, что кол-во эле-тов в массиве равно = 2
         expect_that(count($books) == 2);
     }
+    
+    //public function testFindIssuance(){
+//
+   // }
 
 }

@@ -4,6 +4,8 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Issuance;
+use app\models\User;
+use app\models\Book;
 use app\models\IssuanceSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -64,6 +66,8 @@ class IssuanceController extends Controller
      */
     public function actionCreate()
     {
+        $books = Book::find()->all();
+        $users = User::find()->all();
         $model = new Issuance();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -72,6 +76,8 @@ class IssuanceController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+            'books' => $books,
+            'users' => $users,
         ]);
     }
 
